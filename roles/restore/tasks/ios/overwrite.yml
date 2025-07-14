@@ -2,7 +2,7 @@
 ### -O forces scp versus sftp which Cisco IOS does support
 - name: Copy file over to flash on network device using SCP
   ansible.builtin.shell: >
-    scp -o StrictHostKeyChecking=no
+    scp -vvv -o StrictHostKeyChecking=no
     /backup/{{ rollback_date }}/{{ inventory_hostname }}.txt
     {{ inventory_hostname }}:'flash:{{ rollback_date }}-{{ inventory_hostname }}.txt'
   run_once: true
